@@ -1,0 +1,16 @@
+<agm-map  [latitude]='latitude' [longitude]='longitude'
+      [mapTypeId]='mapType' style="width:100%;height:600px;" [zoom]="13">
+  <agm-marker [latitude]="user_pos.latitude" [longitude]="user_pos.longitude" ></agm-marker>
+  <agm-marker *ngFor="let monopatine of monopatini" [latitude]="monopatine.lat" [longitude]="monopatine.lng" [iconUrl]="iconInfo">
+
+    <agm-info-window [disableAutoPan]="true">
+
+          Scanarizza QR CODE
+    <button type="button" class="btn btn-warning" *ngIf="!biciInuso || monopatine._id!=monopatiniIdUso" (click)="prenotaBici(monopatine._id)" #monopatine._id id="{{monopatine._id}}" >Prenota</button>
+        <button type="button" *ngIf="biciInuso && monopatine._id==monopatiniIdUso" class="btn btn-danger" (click)="fineNolBici(monopatine._id)" #monopatine._id id="{{monopatine._id}}" >Fine</button>
+
+        </agm-info-window>
+
+  </agm-marker>
+    </agm-map>
+

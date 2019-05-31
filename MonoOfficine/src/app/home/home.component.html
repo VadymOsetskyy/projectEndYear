@@ -1,0 +1,81 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" *ngIf="map_Container" style="background:#f05837 !important">
+  <a class="navbar-brand" href="#">Mono Rent</a>
+  <!-- Links -->
+
+</nav>
+  <div class="bgIm" *ngIf="log_Reg_Container">
+  </div>
+<div class=" login-container"  style="margin:0;position:absolute;top:100px;width:100%;">
+
+		<div class="row" *ngIf="log_Reg_Container">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="row" *ngIf="log_Reg_Container">
+					<div class="col-md-6 login-form-1">
+						<h3>Login Form </h3>
+
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Your login" value="" id="loginLog" #loginLog />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="passLog" placeholder="Your Password *" #passLog value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Login" (click)="log_User_handler(loginLog.value, passLog.value)" />
+                        </div>
+
+                </div>
+                <div class="col-md-6 login-form-2">
+                    <div class="login-logo">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                    </div>
+                    <h3>Register Form</h3>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Email *" id="loginReg" #loginReg value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Your Password *" id="passReg" #passReg value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Register" (click)="register_User_handler(loginReg.value, passReg.value)" />
+                        </div>
+                </div>
+            </div>
+
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+    <!-- mappa-->
+    <div class="" style=" margin-right:150px !important;;margin-left:50px !important;">
+      <div class="row" *ngIf="map_Container" style=" margin-left:0 !important;padding-left:0 !important" >
+                  <div class="col-md-9" style=" margin-left:0 !important;padding-left:0 !important">
+                        <app-mappa></app-mappa>
+
+                  </div>
+                  <div class="col-md-3">
+                    <div class="container">
+                        <h2>Your profile</h2>
+                        <div class="card" style="width:400px">
+                          <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image" style="width:50%;position:relative;left:25%;">
+                          <div class="card-body" style="position:relative;left:10%;">
+                            <h4 class="card-title">{{username}}</h4>
+                            <p class="card-text">Prenota la bici clicando sul monopatino scanarizzando il qr code!</p>
+
+        <button type="button" class="btn btn-danger" (click)="logout()"  >Logout</button>
+                          </div>
+                        </div>
+                        <br>
+                    </div>
+                  </div>
+      </div>
+                </div>
+        </div>
+
+
+        <div class="container" *ngIf="map_Container" style="margin:0;position:absolute;top:100px;width:100%;">
+
+
+
+        </div>
+
