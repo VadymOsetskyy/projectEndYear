@@ -8,9 +8,19 @@
           Scanarizza QR CODE
     <button type="button" class="btn btn-warning" *ngIf="!biciInuso || monopatine._id!=monopatiniIdUso" (click)="prenotaBici(monopatine._id)" #monopatine._id id="{{monopatine._id}}" >Prenota</button>
         <button type="button" *ngIf="biciInuso && monopatine._id==monopatiniIdUso" class="btn btn-danger" (click)="fineNolBici(monopatine._id)" #monopatine._id id="{{monopatine._id}}" >Fine</button>
+            <button type="button" class="btn btn-warning" (click)="showModal(monopatine._id)" > Guasto!</button>
+
+
+
 
         </agm-info-window>
-
   </agm-marker>
     </agm-map>
 
+<div class="container" *ngFor="let monopatine of monopatini" >
+
+    <app-modal-guasto *ngIf='monopatine._id == monoIdGuasto'   [idMono]="monopatine._id" [vistaModal]="vistaModal">
+
+    </app-modal-guasto>
+
+    </div>

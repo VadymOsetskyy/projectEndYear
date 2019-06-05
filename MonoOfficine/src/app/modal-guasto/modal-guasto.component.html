@@ -1,0 +1,32 @@
+ {{vistaModal}}
+<div class="modal {{vistaModal}}" id="myModal" style=" ">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<h4 class="modal-title">Segnala guasto! {{idMono}}</h4>
+				<button type="button" class="close" data-dismiss="modal" (click)='hideModal()' >&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="form-group">
+  <label for="sel1">Select list:</label>
+  <select class="form-control" id="sel1" #tipoGausto>
+    <option>Rotto lo sterzo</option>
+    <option> Rotta la ruota</option>
+    <option>Freni non funzionano </option>
+    <option>Affogata</option>
+  </select>
+</div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="segnalaGuasto(idMono,tipoGausto.value)" >Segnala</button>
+        </div>
+
+      </div>
+    </div>
+</div>

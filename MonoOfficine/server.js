@@ -41,11 +41,11 @@ function mono_Pren_handler(id) {
       if (err) throw err;
       db.close();
       console.log(result)
-      if (result.stato == false) {
+      if (result.statoV == false) {
         MongoClient.connect(url, function(err, db) {
           if (err) throw err;
           var dbo = db.db("Tecnologie");
-          dbo.collection("Monopattini").updateOne({ _id:  new mongo.ObjectID(id) }, { $set: { 'stato': true } }, function(err, result) {
+          dbo.collection("Monopattini").updateOne({ _id:  new mongo.ObjectID(id) }, { $set: { 'statoV': true } }, function(err, result) {
             if (err) throw err;
             db.close();
       console.log(result)
@@ -77,7 +77,7 @@ function fine_Nol_handler(id){
   MongoClient.connect(url, function(err, db) {
           if (err) throw err;
           var dbo = db.db("Tecnologie");
-          dbo.collection("Monopattini").updateOne({ _id:  new mongo.ObjectID(id) }, { $set: { 'stato': false } }, function(err, result) {
+          dbo.collection("Monopattini").updateOne({ _id:  new mongo.ObjectID(id) }, { $set: { 'statoV': false } }, function(err, result) {
             if (err) throw err;
             db.close();
             console.log('aggiornato dati flase_')
@@ -130,6 +130,20 @@ app.get('/getMonopatini', (req, res) => {
         res.send({ result: 'Error' })
     })
   })
+})
+
+
+app.post('/segnalaGuasto', (req,res)=>{
+
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("Tecnologie");
+    dbo.collection("Guasti").insertOne(req.body.guasto,function(err, result) {
+      if (err) throw err;
+      db.close();
+    })
+  })
+
 })
 
 app.listen(3000, function() {

@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MappaComponent } from './mappa/mappa.component';
 import { AgmCoreModule } from '@agm/core';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { ModalGuastoComponent } from './modal-guasto/modal-guasto.component';
 const config: SocketIoConfig = { url: 'https://5000-a13f89fb-6965-4772-8fb3-02d380eaf668.ws-eu0.gitpod.io/', options: {} };
 
 
@@ -18,7 +19,8 @@ const config: SocketIoConfig = { url: 'https://5000-a13f89fb-6965-4772-8fb3-02d3
     AppComponent,
     HomeComponent,
     MainComponent,
-    MappaComponent
+    MappaComponent,
+    ModalGuastoComponent
   ],
   imports: [
     BrowserModule,

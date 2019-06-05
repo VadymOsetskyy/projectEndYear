@@ -20,6 +20,8 @@ export class MappaComponent implements OnInit {
   private monopatiniIdUso: number;
   private biciInuso: boolean = false;
   private monopatini = Array<Monopatine>();
+  private monoIdGuasto: string;
+  private vistaModal:string = 'hidden';
   private iconInfo = {
     url: 'https://cdn1.iconfinder.com/data/icons/transportation-symbol/91/transportation_a-25-512.png',
     scaledSize: {
@@ -89,6 +91,11 @@ get_User_Position():void{
         this.user_pos.latitude=pos.coords.latitude;
         this.user_pos.longitude=pos.coords.longitude;
       })
+}
+
+showModal(id):void{
+  this.monoIdGuasto=id;
+  this.vistaModal='vistaModalShow'
 }
 
 }
