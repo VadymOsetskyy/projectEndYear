@@ -27,7 +27,7 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "jqlite": "^0.2.42",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mongodb": "^3.2.4",
     "ngx-qrcode2": "0.0.9",
     "ngx-socket-io": "^2.1.1",
